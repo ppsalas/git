@@ -1,0 +1,59 @@
+*{margin:0Px;padding:0Px}
+header, section, footer, aside, nav, article, figure
+{display: block;}
+
+/*Fondo de la pagina*/
+body {background-color: #eaf5f2;
+    font-family:Arial, Helvetica, sans-serif ;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-size: cover;}
+
+/*Estructura de la pagina*/
+header {background-color: #eaf5f2;}
+nav {background-color: #198064;}
+section{background-color: #ffffff3a;}
+footer{background-color: rgba(58, 25, 241, 0);}
+
+h1 {
+    background-color: rgba(70, 66, 67);
+    color: rgb(248, 241, 241);
+    height: 100%;
+}
+
+
+#contenedor{
+    width: 80%;
+    height: 500px;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#artistaDestacado {
+    width: 200px;
+    height: 200px;
+    padding: 5px;
+    margin: 30px;
+}
+
+
+
+
+
+#navbar {background-color: #490e0e83;
+    height: 50%;
+    border: 0px solid rgba(255, 255, 255, 0.658);
+    padding: 0px;
+}
+
+
+#pie_principal {clear: both; text-align: left; border: 5px #2c2b2b5b;
+    padding: 10px; background: rgb(70, 66, 67); color: #fff;
+    }
+#facebook, #instagram{
+    float: right;
+}    
