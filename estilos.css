@@ -1,0 +1,40 @@
+#footerprincipal{
+    background: #152F4F;
+    color:white;        
+}
+#cajas{
+    width: 60%;
+    height: 60%;
+    margin-left: 200px;
+
+}
+
+#buscarpag {
+    margin-left: 200px;
+
+}
+
+#logo {
+    margin-right: 0px;
+}
+
+#navbarDropdown{
+    color:black;
+    margin-right: 0px;
+}
+
+h3{
+    
+    height: 80%;
+}
+
+#menuu{
+    height: 50%;
+}
+
+h1 {
+    background-color: rgb(243, 241, 241);
+    color: rgb(10, 10, 10);
+    height: 100%;
+    text-align: center;
+}
