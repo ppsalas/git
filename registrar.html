@@ -45,8 +45,9 @@
                             <a class="dropdown-item" href="registrar.html">Registrar</a>
                         </div>
                     </div>
+                </form>
             </div>
-            </form>
+
 
             <nav class="navbar navbar-expand-lg navbar-light bg-light" id=menuu>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -58,10 +59,11 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" href="index.html"><b>Inicio</b> <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="index.html"><b>Inicio</b> <span
+                                    class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="productos.html"><b>Productos</b></a>
+                            <a class="nav-link" href="coleccioncompleta.html"><b>Productos</b></a>
                         </li>
 
                         <li class="nav-item">
@@ -72,12 +74,44 @@
             </nav>
 
         </header>
- 
+
 
     </div>
 
 
+
     <hr size="10px" color="black" />
+
+    <div class="row" id=iniciarsesion>
+        <div class="col-5"></div>
+        <form>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Correo Electronico</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <small id="emailHelp" class="form-text text-muted">Sus Datos son privados.</small>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Contraseña</label>
+                <input type="password" class="form-control" id="exampleInputPassword1">
+            </div>
+            <div class="form-group">
+                <label for="inputAddress2">Direccion</label>
+                <input type="text" class="form-control" id="direccion"
+                    placeholder="Direccion, Numero, Departamento o Casa, Etc..">
+            </div>
+            <div class="form-group">
+                <label for="inputAddress2">Ciudad</label>
+                <input type="text" class="form-control" id="ciudad"
+                    placeholder="Ciudad, Region, Comuna, Etc..">
+            </div>
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Acepto Derechos Y condiciones</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Registrar</button>
+        </form>
+
+    </div>
 
 
     <hr size="10px" color="black" />
