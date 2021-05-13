@@ -7,7 +7,7 @@ $(document).ready(function () {
             },
             password: {
                 required: true,
-                minlength: 4
+                minlength: 1
             },
             email: {
                 required: true,
@@ -27,7 +27,7 @@ $(document).ready(function () {
             },
             password: {
                 required: true,
-                minlength: 4
+                minlength: 1
             },
             email: {
                 required: true,
