@@ -77,7 +77,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="contacto.html" tabindex="-1" aria-disabled="true"><b>Ayuda</b></a>
+                            <a class="nav-link" href="subirobra.html" tabindex="-1" aria-disabled="true"><b>Publicar Obra</b></a>
                         </li>
                     </ul>
                 </div>
@@ -90,26 +90,29 @@
 
 
     <hr size="10px" color="black" />
-    <div class="row" id=iniciarsesion>
-        <div class="col-5"></div>
-        <form>
-            <div class="form-group">
-                <label for="exampleInputEmail1">Correo Electronico</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                <small id="emailHelp" class="form-text text-muted">Sus Datos son privados.</small>
-            </div>
-            <div class="form-group">
-                <label for="exampleInputPassword1">Contraseña</label>
-                <input type="password" class="form-control" id="exampleInputPassword1">
-            </div>
-            <div class="form-group form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                <label class="form-check-label" for="exampleCheck1">Recordarme</label>
-            </div>
-            <button type="submit" class="btn btn-primary">Iniciar</button>
-        </form>
 
+    <h4>Inicio de Sesion</h4>
+    <br>
+
+    <div class="container">
+        <div class="row">
+            <form id="iniciarsesion" action="index.html" method="post">
+                <div class="form-group">
+                    <label for="email">E-Mail </label>
+                    <input id="email" type="email" name="email" required class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Contraseña</label>
+                    <input type="password" required class="form-control" id="password">
+                </div>
+                <input class="btn btn-danger" type="submit" value="SUBMIT">
+                <input type="reset" class="btn btn-primary" id="limpiar" value="Limpiar">
+            </form>
+        </div>
     </div>
+
+    <br>
+    <br>
 
 
     <hr size="10px" color="black" />

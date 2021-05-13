@@ -17,7 +17,7 @@
     <!--CSS-->
     <link rel="Stylesheet" href="estilos.css">
 
-    <!-- BOOTSTRAP JS -->
+    <!-- BOOTRSTRAP JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
         crossorigin="anonymous"></script>
@@ -78,7 +78,8 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="subirobra.html" tabindex="-1" aria-disabled="true"><b>Publicar Obra</b></a>
+                            <a class="nav-link" href="subirobra.html" tabindex="-1" aria-disabled="true"><b>Publicar
+                                    Obra</b></a>
                         </li>
                     </ul>
                 </div>
@@ -91,6 +92,39 @@
 
 
     <hr size="10px" color="black" />
+
+    <h4>Publique su obra para venderla</h4>
+    <br>
+
+    <div class="container">
+        <div class="row">
+            <form id="subirobraa" action="index.html" method="post">
+                <div class="form-group">
+                    <label for="name">Nombre <span>(Minimo 3 Caracteres)</span></label>
+                    <input id="name" name="name" minlength="3" type="text" required class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="email">E-Mail </label>
+                    <input id="email" type="email" name="email" required class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Contraseña</label>
+                    <input type="password" required class="form-control" id="password">
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlFile1">Subir Obra Adjuntar</label>
+                    <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                </div>
+                <label for="precio">Precio $ </label>
+                <input id="precio" name="precio" min="1" type="number" required class="form-control">
+                <br>
+                <input class="btn btn-danger" type="submit" value="SUBMIT">
+                <input type="reset" class="btn btn-primary" id="limpiar" value="Limpiar">
+
+            </form>
+
+        </div>
+    </div>
 
 
     <hr size="10px" color="black" />

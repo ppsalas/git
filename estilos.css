@@ -22,8 +22,8 @@ header{
 
 }
 
-#iniciarsesion{
-    margin-left:20px;
+#iniciarsesion {
+    margin-left: 480px;
 }
 
 #logo {
@@ -56,6 +56,18 @@ h1 {
 }
 
 #registrarsee{
+    margin-left:480px;
+
+}
+
+#subirobraa{
+
     margin-left:400px;
+
+}
+
+#apiwsp{
+    
+    text-align: center;
 
 }
