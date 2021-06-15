@@ -78,7 +78,8 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="subirobra.html" tabindex="-1" aria-disabled="true"><b>Publicar Obra</b></a>
+                            <a class="nav-link" href="subirobra.html" tabindex="-1" aria-disabled="true"><b>Publicar
+                                    Obra</b></a>
                         </li>
                     </ul>
                 </div>
@@ -86,22 +87,23 @@
 
         </header>
         <!-- CARRUSEL BOOSTRAP -->
+        {% load static %}
         <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active" data-interval="10000">
                     <a href="pinturadestacada1.html">
-                        <img src="Imagenes/pinturadestacada1.png" class="d-block w-100" alt="Inti Castro" width="450px"
-                            height="500px"></a>
+                        <img src="{% static 'core/img/pinturadestacada1.png'%}" class="d-block w-100" alt="Inti Castro"
+                            width="450px" height="500px"></a>
                 </div>
                 <div class="carousel-item" data-interval="2000">
                     <a href="pinturadestacada2.html">
-                        <img src="Imagenes/pinturadestacada2.png" class="d-block w-100" alt="..." width="450px"
-                            height="500px"></a>
+                        <img src="{% static 'core/img/pinturadestacada2.png'%}" class="d-block w-100" alt="..."
+                            width="450px" height="500px"></a>
                 </div>
                 <div class="carousel-item">
                     <a href="pinturadestacada3.html">
-                        <img src="Imagenes/pinturadestacada3.png" class="d-block w-100" alt="..." width="450px"
-                            height="500px"></a>
+                        <img src="{% static 'core/img/pinturadestacada3.png'%}" class="d-block w-100" alt="..."
+                            width="450px" height="500px"></a>
                 </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
@@ -118,27 +120,27 @@
 
     <hr size="10px" color="black" />
     <h1>Tipos de obras </h1>
-    
+
 
     <hr size="10px" color="black" />
-<br>
+    <br>
     <div class="card-deck" id=cajas>
         <div class="card">
-            <img src="Imagenes/formatopequeño.png" class="card-img-top" alt="...">
+            <img src="{% static 'core/img/formatopequeño.png'%}" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">Obras Formato Pequeño</h5>
                 <a href="formatopequeño.html" class="btn btn-primary">Ver</a>
             </div>
         </div>
         <div class="card">
-            <img src="Imagenes/cuadrosgrabados.png" class="card-img-top" alt="...">
+            <img src="{% static 'core/img/cuadrosgrabados.png'%}" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">Pinturas y Cuadros Grabados</h5>
                 <a href="cuadrosgrabados.html" class="btn btn-primary">Ver</a>
             </div>
         </div>
         <div class="card">
-            <img src="Imagenes/coleccioncompleta.png" class="card-img-top" alt="...">
+            <img src="{% static 'core/img/coleccioncompleta.png'%}" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">Coleccion Completa</h5>
                 <a href="coleccioncompleta.html" class="btn btn-primary">Ver</a>
@@ -149,14 +151,15 @@
     <br>
 
     <hr size="10px" color="black" />
-    
+
     <h4>Api de whatsapp para contacto inmediato!</h4>
     <br>
-<div class="container" id=apiwsp>
-    <a href="https://api.whatsapp.com/send?phone=56930290495&text=hola,%20¿qué%20tal%20estás?"><b>HABLA VIA WHATSAPP AQUI AHORA</b></a>
-</div>
-<br>
-<br>
+    <div class="container" id=apiwsp>
+        <a href="https://api.whatsapp.com/send?phone=56930290495&text=hola,%20¿qué%20tal%20estás?"><b>HABLA VIA WHATSAPP
+                AQUI AHORA</b></a>
+    </div>
+    <br>
+    <br>
 
 
 
