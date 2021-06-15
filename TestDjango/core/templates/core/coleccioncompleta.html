@@ -32,6 +32,7 @@
 </head>
 
 <body>
+    {% load static %}
     <!--Header con Menu buscador y Demaces -->
     <div>
         <header>
@@ -39,8 +40,8 @@
             <hr size="10px" color="black" />
             <div class=container>
                 <form class="form-inline my-5 my-lg-2">
-                    <a class="navbar-brand" id=logo href="index.html"><img src="Imagenes/logo.png" height="55vw"
-                            width="55vw"></a>
+                    <a class="navbar-brand" id=logo href="index.html"><img src="{% static 'core/img/logo.png'%}"
+                            height="55vw" width="55vw"></a>
                     <h3>Group 0 </h3>
                     <div>
                         <input class="form-control mr-sm-2" id=buscarpag type="search" size="45"
@@ -79,7 +80,8 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="subirobra.html" tabindex="-1" aria-disabled="true"><b>Publicar Obra</b></a>
+                            <a class="nav-link" href="subirobra.html" tabindex="-1" aria-disabled="true"><b>Publicar
+                                    Obra</b></a>
                         </li>
                     </ul>
                 </div>
@@ -94,7 +96,7 @@
     <hr size="10px" color="black" />
 
     <h4>Coleccion Completa</h4>
-    {% load static %}
+
     <div class="containerr">
         <div class="imagengaleria"><a href="...">
                 <img src="{% static 'core/img/Coleccion/cuadro1.png'%}" height="170 vw" width="170vw">
@@ -146,26 +148,26 @@
             </a>Pp - $200.000</div>
     </div>
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
 
     <hr size="10px" color="black" />
     <!--FOOTER -->

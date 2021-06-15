@@ -31,6 +31,7 @@
 </head>
 
 <body>
+    {% load static %}
     <!--Header con Menu buscador y Demaces -->
     <div>
         <header>
@@ -38,8 +39,8 @@
             <hr size="10px" color="black" />
             <div class=container>
                 <form class="form-inline my-5 my-lg-2">
-                    <a class="navbar-brand" id=logo href="index.html"><img src="Imagenes/logo.png" height="55vw"
-                            width="55vw"></a>
+                    <a class="navbar-brand" id=logo href="index.html"><img src="{% static 'core/img/logo.png'%}"
+                            height="55vw" width="55vw"></a>
                     <h3>Group 0 </h3>
                     <div>
                         <input class="form-control mr-sm-2" id=buscarpag type="search" size="45"
@@ -87,7 +88,7 @@
 
         </header>
         <!-- CARRUSEL BOOSTRAP -->
-        {% load static %}
+        
         <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active" data-interval="10000">
