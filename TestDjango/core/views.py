@@ -35,8 +35,7 @@ def pinturadestacada3(request):
 def registrar(request):
     return render(request, 'core/registrar.html')
 
-def subirobra(request):
-    return render(request, 'core/subirobra.html')
+
 
 
 class Persona:
@@ -47,7 +46,7 @@ class Persona:
         
 
 
-def Test(request):
+def subirobra(request):
     
     lista=["Lasaña","Charquican","Porotos Granados"]
     
@@ -55,7 +54,7 @@ def Test(request):
     
     contexto={"nombre":"Jose Salas", "comidas":lista, "hijo":hijo}
     
-    return render(request, 'subirobra.html', contexto)
+    return render(request, 'core/subirobra.html', contexto)
 
 
 

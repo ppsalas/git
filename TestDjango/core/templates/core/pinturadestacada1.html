@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 
+{% load static %}
 <head>
     <!-- META -->
     <meta charset="UTF-8">
@@ -15,9 +16,9 @@
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
     <!--CSS-->
-    <link rel="Stylesheet" href="estilos.css">
+    <link rel="Stylesheet" href="{% static 'core/css/estilos.css'%}">
 
-    <!-- BOOTRSTRAP JS -->
+    <!-- BOOTSTRAP JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
         crossorigin="anonymous"></script>
@@ -31,7 +32,7 @@
 </head>
 
 <body>
-    {% load static %}
+    
     <!--Header con Menu buscador y Demaces -->
     <div>
         <header>
@@ -39,8 +40,8 @@
             <hr size="10px" color="black" />
             <div class=container>
                 <form class="form-inline my-5 my-lg-2">
-                    <a class="navbar-brand" id=logo href="index.html"><img src="{% static 'core/img/logo.png'%}" height="55vw"
-                            width="55vw"></a>
+                    <a class="navbar-brand" id=logo href="{% url 'index' %}"><img src="{% static 'core/img/logo.png'%}"
+                            height="55vw" width="55vw"></a>
                     <h3>Group 0 </h3>
                     <div>
                         <input class="form-control mr-sm-2" id=buscarpag type="search" size="45"
@@ -53,8 +54,8 @@
                             <b>Cuenta</b>
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="iniciarsesion.html">Iniciar Sesion</a>
-                            <a class="dropdown-item" href="registrar.html">Registrar</a>
+                            <a class="dropdown-item" href="{% url 'iniciarsesion' %}">Iniciar Sesion</a>
+                            <a class="dropdown-item" href="{% url 'registrar' %}">Registrar</a>
                         </div>
                     </div>
                 </form>
@@ -71,15 +72,16 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" href="index.html"><b>Inicio</b> <span
+                            <a class="nav-link" href="{% url 'index' %}"><b>Inicio</b> <span
                                     class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="coleccioncompleta.html"><b>Productos</b></a>
+                            <a class="nav-link" href="{% url 'coleccioncompleta' %}"><b>Productos</b></a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="subirobra.html" tabindex="-1" aria-disabled="true"><b>Publicar Obra</b></a>
+                            <a class="nav-link" href="{% url 'subirobra' %}" tabindex="-1" aria-disabled="true"><b>Publicar
+                                    Obra</b></a>
                         </li>
                     </ul>
                 </div>
@@ -121,14 +123,15 @@
             <div class="col-6 col-md">
                 <h5>Acerca</h5>
                 <ul class="list-unstyled text-small">
-                    <li><a class="text-muted" href="equipo.html">Equipo</a></li>
-                    <li><a class="text-muted" href="contacto.html">Contacto</a></li>
+                    <li><a class="text-muted" href="{% url 'equipo' %}">Equipo</a></li>
+                    <li><a class="text-muted" href="{% url 'Contacto' %}">Contacto</a></li>
                     <li><a class="text-muted">Ubicacion</a></li>
                     <li><a class="text-muted">Viña del mar, V region</a></li>
                 </ul>
             </div>
         </div>
     </footer>
+
 
 
 </body>

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 
+{% load static %}
 <head>
     <!-- META -->
     <meta charset="UTF-8">
@@ -15,7 +16,7 @@
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
     <!--CSS-->
-    <link rel="Stylesheet" href="estilos.css">
+    <link rel="Stylesheet" href="{% static 'core/css/estilos.css'%}">
 
     <!-- BOOTRSTRAP JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -31,7 +32,7 @@
 </head>
 
 <body>
-    {% load static %}
+    
     <!--Header con Menu buscador y Demaces -->
     <div>
         <header>
@@ -39,7 +40,7 @@
             <hr size="10px" color="black" />
             <div class=container>
                 <form class="form-inline my-5 my-lg-2">
-                    <a class="navbar-brand" id=logo href="index.html"><img src="{% static 'core/img/logo.png'%}"
+                    <a class="navbar-brand" id=logo href="{% url 'index' %}"><img src="{% static 'core/img/logo.png'%}"
                             height="55vw" width="55vw"></a>
                     <h3>Group 0 </h3>
                     <div>
@@ -53,8 +54,8 @@
                             <b>Cuenta</b>
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="iniciarsesion.html">Iniciar Sesion</a>
-                            <a class="dropdown-item" href="registrar.html">Registrar</a>
+                            <a class="dropdown-item" href="{% url 'iniciarsesion' %}">Iniciar Sesion</a>
+                            <a class="dropdown-item" href="{% url 'registrar' %}">Registrar</a>
                         </div>
                     </div>
                 </form>
@@ -71,15 +72,15 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" href="index.html"><b>Inicio</b> <span
+                            <a class="nav-link" href="{% url 'index' %}"><b>Inicio</b> <span
                                     class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="coleccioncompleta.html"><b>Productos</b></a>
+                            <a class="nav-link" href="{% url 'coleccioncompleta' %}"><b>Productos</b></a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="subirobra.html" tabindex="-1" aria-disabled="true"><b>Publicar
+                            <a class="nav-link" href="{% url 'subirobra' %}" tabindex="-1" aria-disabled="true"><b>Publicar
                                     Obra</b></a>
                         </li>
                     </ul>
@@ -92,17 +93,17 @@
         <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active" data-interval="10000">
-                    <a href="pinturadestacada1.html">
+                    <a href="{% url 'pinturadestacada1' %}">
                         <img src="{% static 'core/img/pinturadestacada1.png'%}" class="d-block w-100" alt="Inti Castro"
                             width="450px" height="500px"></a>
                 </div>
                 <div class="carousel-item" data-interval="2000">
-                    <a href="pinturadestacada2.html">
+                    <a href="{% url 'pinturadestacada2' %}">
                         <img src="{% static 'core/img/pinturadestacada2.png'%}" class="d-block w-100" alt="..."
                             width="450px" height="500px"></a>
                 </div>
                 <div class="carousel-item">
-                    <a href="pinturadestacada3.html">
+                    <a href="{% url 'pinturadestacada3' %}">
                         <img src="{% static 'core/img/pinturadestacada3.png'%}" class="d-block w-100" alt="..."
                             width="450px" height="500px"></a>
                 </div>
@@ -130,21 +131,21 @@
             <img src="{% static 'core/img/formatopequeño.png'%}" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">Obras Formato Pequeño</h5>
-                <a href="formatopequeño.html" class="btn btn-primary">Ver</a>
+                <a href="{% url 'formatopequeño' %}" class="btn btn-primary">Ver</a>
             </div>
         </div>
         <div class="card">
             <img src="{% static 'core/img/cuadrosgrabados.png'%}" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">Pinturas y Cuadros Grabados</h5>
-                <a href="cuadrosgrabados.html" class="btn btn-primary">Ver</a>
+                <a href="{% url 'cuadrosgrabados' %}" class="btn btn-primary">Ver</a>
             </div>
         </div>
         <div class="card">
             <img src="{% static 'core/img/coleccioncompleta.png'%}" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">Coleccion Completa</h5>
-                <a href="coleccioncompleta.html" class="btn btn-primary">Ver</a>
+                <a href="{% url 'coleccioncompleta' %}" class="btn btn-primary">Ver</a>
             </div>
         </div>
     </div>
@@ -191,8 +192,8 @@
             <div class="col-6 col-md">
                 <h5>Acerca</h5>
                 <ul class="list-unstyled text-small">
-                    <li><a class="text-muted" href="equipo.html">Equipo</a></li>
-                    <li><a class="text-muted" href="contacto.html">Contacto</a></li>
+                    <li><a class="text-muted" href="{% url 'equipo' %}">Equipo</a></li>
+                    <li><a class="text-muted" href="{% url 'Contacto' %}">Contacto</a></li>
                     <li><a class="text-muted">Ubicacion</a></li>
                     <li><a class="text-muted">Viña del mar, V region</a></li>
                 </ul>

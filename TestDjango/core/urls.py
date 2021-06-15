@@ -1,63 +1,22 @@
 from django.urls import path
-from .views import coleccioncompleta
-from .views import Contacto
-from .views import cuadrosgrabados
-from .views import equipo
-from .views import formatopequeño
-from .views import index
-from .views import iniciarsesion
-from .views import pinturadestacada1
-from .views import pinturadestacada2
-from .views import pinturadestacada3
-from .views import registrar
-from .views import subirobra
+from .views import index, coleccioncompleta, Contacto, cuadrosgrabados, equipo, formatopequeño, iniciarsesion, pinturadestacada1, pinturadestacada2, pinturadestacada3, registrar, subirobra 
 
 
-urlpatterns = [
-    path('', coleccioncompleta,name="coleccioncompleta"),
-]
-
-urlpatterns = [
-    path('', Contacto,name="Contacto"),
-]
-
-urlpatterns = [
-    path('', cuadrosgrabados,name="cuadrosgrabados"),
-]
-
-urlpatterns = [
-    path('', equipo,name="equipo"),
-]
-
-urlpatterns = [
-    path('', formatopequeño,name="formatopequeño"),
-]
 
 urlpatterns = [
     path('', index,name="index"),
+    path('coleccion_completa', coleccioncompleta,name="coleccioncompleta"),
+    path('contacto', Contacto,name="Contacto"),
+    path('cuadros_grabados', cuadrosgrabados,name="cuadrosgrabados"),
+    path('equipos', equipo,name="equipo"),
+    path('formato_pequeño', formatopequeño,name="formatopequeño"),
+    path('iniciar_sesion', iniciarsesion,name="iniciarsesion"),
+    path('pintura_destacada1', pinturadestacada1,name="pinturadestacada1"),
+    path('pintura_destacada2', pinturadestacada2,name="pinturadestacada2"),
+    path('pintura_destacada3', pinturadestacada3,name="pinturadestacada3"),
+    path('registrarse', registrar,name="registrar"),
+    path('subir_obra', subirobra,name="subirobra"),
 ]
 
-urlpatterns = [
-    path('', iniciarsesion,name="iniciarsesion"),
-]
 
-urlpatterns = [
-    path('', pinturadestacada1,name="pinturadestacada1"),
-]
-
-urlpatterns = [
-    path('', pinturadestacada2,name="pinturadestacada2"),
-]
-
-urlpatterns = [
-    path('', pinturadestacada3,name="pinturadestacada3"),
-]
-
-urlpatterns = [
-    path('', registrar,name="registrar"),
-]
-
-urlpatterns = [
-    path('', subirobra,name="subirobra"),
-]
 
