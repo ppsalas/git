@@ -39,5 +39,24 @@ def subirobra(request):
     return render(request, 'core/subirobra.html')
 
 
+class Persona:
+    def __init__(self, nombre, edad):
+        self.nombre=nombre
+        self.edad=edad
+        super().__init__()
+        
+
+
+def Test(request):
+    
+    lista=["Lasaña","Charquican","Porotos Granados"]
+    
+    hijo=Persona("Fernando Rivera", "4")
+    
+    contexto={"nombre":"Jose Salas", "comidas":lista, "hijo":hijo}
+    
+    return render(request, 'subirobra.html', contexto)
+
+
 
 

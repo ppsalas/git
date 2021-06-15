@@ -39,8 +39,8 @@
             <hr size="10px" color="black" />
             <div class=container>
                 <form class="form-inline my-5 my-lg-2">
-                    <a class="navbar-brand" id=logo href="index.html"><img src="{% static 'core/img/logo.png'%}" height="55vw"
-                            width="55vw"></a>
+                    <a class="navbar-brand" id=logo href="index.html"><img src="{% static 'core/img/logo.png'%}"
+                            height="55vw" width="55vw"></a>
                     <h3>Group 0 </h3>
                     <div>
                         <input class="form-control mr-sm-2" id=buscarpag type="search" size="45"
@@ -93,6 +93,24 @@
 
 
     <hr size="10px" color="black" />
+
+    <h1>Bienvenido {{nombre}}</h1>
+    <br>
+    <h1>Comeras primero {{nombre}} {{comidas.1}} y al ultimo {{comidas.2}} pero mañana {{comidas.3}}</h1>
+    <br>
+    <h1>Listado de comidas</h1>
+    <ol>
+        {% for comida in comidas %}
+
+        <li>{{comida}}</li>
+
+        {{% endfor %}}
+    </ol>
+    <br>
+
+    <h1>{{nombre}} tiene un hijo llamado {{hijo.nombre}} que tiene {{hijo.edad}}años</h1>
+
+    <br>
 
     <h4>Publique su obra para venderla</h4>
     <br>
