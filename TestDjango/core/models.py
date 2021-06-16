@@ -13,7 +13,16 @@ class Cliente(models.Model):
     contraseña=models.CharField(max_length=50, verbose_name='Contraseña')
     
     def __str__(self):
-        return self.nombre
+        return self.run
+
+#MODELO CARRO
+class Carro(models.Model):
+    cod_carro=models.IntegerField(primary_key=True, verbose_name='Codigo de Carro')
+    fecha_creacion=models.DateField(auto_now=False, auto_now_add=False, verbose_name='Fecha de Creacion')
+    run=models.ForeignKey(Cliente, on_delete=models.CASCADE)
+    
+    def __str__(self):
+        return self.run    
 
 
 #Modelo Producto
@@ -27,15 +36,6 @@ class Producto(models.Model):
     
     def __str__(self):
         return self.nombre
-#MODELO CARRO
-
-class Carro(models.Model):
-    cod_carro=models.IntegerField(primary_key=True, verbose_name='Codigo de Carro')
-    fecha_creacion=models.DateField(auto_now=False, auto_now_add=False, verbose_name='Fecha de Creacion')
-    run=models.ForeignKey(Cliente, on_delete=models.CASCADE)
-    
-    def __str__(self):
-        return self.cod_carro
 
 
     
@@ -48,5 +48,5 @@ class Producto_Carro(models.Model):
     cantidad=models.IntegerField(verbose_name='Cantidad')
     
     def __str__(self):
-        return self.precio_venta
+        return self.cantidad
     
