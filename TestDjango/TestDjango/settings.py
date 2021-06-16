@@ -77,8 +77,8 @@ WSGI_APPLICATION = 'TestDjango.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.oracle',
-        'NAME': '127.0.0.1/xe',
-        'USER': 'Proyecto',
+        'NAME': '127.0.0.1:1521/xe',
+        'USER': 'c##prueba',
         'PASSWORD': 'Pepe12345678',
         'TEST': {
             'USER' : 'default_test',
