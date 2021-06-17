@@ -96,11 +96,11 @@
 
 
     <hr size="10px" color="black" />
-    <div class="row">
-        <h1>Listado de Productos</h1>
-    </div>
 
-    <div class="row">
+        <h1>Listado de Productos</h1>
+
+<br>
+    <div class="container">
         <table class="table">
             <thead>
                 <tr>
@@ -110,7 +110,8 @@
                     <th scope="col">Stock</th>
                     <th scope="col">Descripcion</th>
                     <th scope="col">Foto</th>
-                    <th scope="col">Opciones</th>
+                    <th scope="col">Modificar</th>
+                    <th scope="col">Eliminar</th>
                 </tr>
             </thead>
             <tbody>
@@ -131,7 +132,7 @@
         </table>
         <a href="{% url 'form_producto' %}">Nuevo Producto</a>
     </div>
-
+<br>
 
     <hr size="10px" color="black" />
     <!--FOOTER -->

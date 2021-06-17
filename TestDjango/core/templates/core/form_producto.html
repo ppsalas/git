@@ -33,7 +33,7 @@
     <script type="text/javascript">
         $(document).ready(function () {
             $("#error").hide();
-            
+
         })
     </script>
 </head>
@@ -104,22 +104,23 @@
     <hr size="10px" color="black" />
 
 
+
+    <h1>Subir Obra</h1>
+    <br>
     <div class="container">
-        <div class="row">
-            <h1>Subir Obra</h1>
-        </div>
         <div class="row">
             <form method="post" action="" id="formulario">
                 {% csrf_token %}
                 <div class="form-group">
                     {{form.as_table}}
                 </div>
-
+                <br>
                 <input type="submit" class="btn btn-danger" id="enviar" value="Enviar">
                 <input type="reset" class="btn btn-primary" id="limpiar" value="Limpiar">
                 <div id="error" class="alert alert-danger" role="alert"></div>
             </form>
         </div>
+        <br>
         <div class="row">
             <div class="alert alert-success" role="alert" id="succes">
                 {{mensaje}}

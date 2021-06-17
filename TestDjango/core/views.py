@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from .models import Producto
 from .forms import ProductoForm
 
+
 # Create your views here.
 
 
@@ -106,7 +107,7 @@ def form_del_producto(request,id):
     #eliminamos el producto del id buscado
     producto.delete()
     #ahora redirigmos a la pagina con el listado
-    return redirect(to="pinturadestacada1")
+    return redirect(to="listado")
 
 
 
