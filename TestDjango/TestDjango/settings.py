@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-2r(uua)#n^2@_wp+^y&z^2%n!!g!-oue^tp5!b*5ib4x@9h_5k
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com', '127.0.0.1:1521/xe']
+ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com']
 
 
 # Application definition
@@ -77,8 +77,12 @@ WSGI_APPLICATION = 'TestDjango.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.oracle',
+        'NAME': 'xe',
+        'USER': 'c##prueba',
+        'PASSWORD': 'Pepe12345678',
+        'HOST': '127.0.0.1',
+        'PORT': '1521',
     }
 }
 
