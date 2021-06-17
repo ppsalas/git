@@ -32,17 +32,9 @@ def index(request):
 def iniciarsesion(request):
     return render(request, 'core/iniciarsesion.html')
 
-
 def pinturadestacada1(request):
-    # accediendo al objeto que contiene los datos de la base de datos
-    # el metodo all traera todos los productos que estan en la tabla
-    productos = Producto.objects.all()
-    # ahora crearemos una variable que le pase los datos del producto al template
-    datos = {
-        'productos': productos
-    }
-    # ahora lo agregamos para que se envie al templateee
-    return render(request, 'core/pinturadestacada1.html', datos)
+
+    return render(request, 'core/pinturadestacada1.html')
 
 
 def pinturadestacada2(request):
@@ -55,6 +47,17 @@ def pinturadestacada3(request):
 
 def registrar(request):
     return render(request, 'core/registrar.html')
+
+def listado(request):
+    # accediendo al objeto que contiene los datos de la base de datos
+    # el metodo all traera todos los productos que estan en la tabla
+    productos = Producto.objects.all()
+    # ahora crearemos una variable que le pase los datos del producto al template
+    datos = {
+        'productos': productos
+    }
+    # ahora lo agregamos para que se envie al templateee
+    return render(request, 'core/listado.html', datos)
 
 
 def form_producto(request):
@@ -105,21 +108,9 @@ def form_del_producto(request,id):
     #ahora redirigmos a la pagina con el listado
     return redirect(to="pinturadestacada1")
 
-class Persona:
-    def __init__(self, nombre, edad):
-        self.nombre = nombre
-        self.edad = edad
-        super().__init__()
 
 
-def subirobra(request):
 
-    lista = ["Lasaña", "Charquican", "Porotos Granados"]
 
-    hijo = Persona("Fernando Rivera", "4")
-
-    contexto = {"nombre": "Jose Salas", "comidas": lista, "hijo": hijo}
-
-    return render(request, 'core/subirobra.html', contexto)
 
 

@@ -2,6 +2,7 @@
 <html lang="es">
 
 {% load static %}
+
 <head>
     <!-- META -->
     <meta charset="UTF-8">
@@ -18,7 +19,7 @@
     <!--CSS-->
     <link rel="Stylesheet" href="{% static 'core/css/estilos.css'%}">
 
-    <!-- BOOTRSTRAP JS -->
+    <!-- BOOTSTRAP JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
         crossorigin="anonymous"></script>
@@ -32,7 +33,7 @@
 </head>
 
 <body>
-    
+
     <!--Header con Menu buscador y Demaces -->
     <div>
         <header>
@@ -76,11 +77,12 @@
                                     class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'coleccioncompleta' %}""><b>Productos</b></a>
+                            <a class="nav-link" href="{% url 'coleccioncompleta' %}"><b>Productos</b></a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'subirobra' %}" tabindex="-1" aria-disabled="true"><b>Publicar
+                            <a class="nav-link" href="{% url 'form_producto' %}" tabindex="-1"
+                                aria-disabled="true"><b>Publicar
                                     Obra</b></a>
                         </li>
                     </ul>
@@ -94,56 +96,40 @@
 
 
     <hr size="10px" color="black" />
+    <div class="row">
+        <h1>Listado de Productos</h1>
+    </div>
 
-    <h1>Bienvenido {{nombre}}</h1>
-    <br>
-    <h1>Comeras primero {{nombre}} {{comidas.1}} y al ultimo {{comidas.2}} pero mañana {{comidas.3}}</h1>
-    <br>
-    <h1>Listado de comidas</h1>
-    <ol>
-        {% for comida in comidas %}
+    <div class="row">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Codigo</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col">Stock</th>
+                    <th scope="col">Descripcion</th>
+                    <th scope="col">Foto</th>
+                    <th scope="col">Opciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for pro in productos %}
+                <tr>
+                    <td>{{pro.cod_producto}}</td>
+                    <td>{{pro.nombre}}</td>
+                    <td>{{pro.precio}}</td>
+                    <td>{{pro.stock}}</td>
+                    <td>{{pro.descripcion}}</td>
+                    <td>{{pro.foto}}</td>
+                    <td><a href="{% url 'form_mod_producto' pro.cod_producto %}">Modificar</a></td>
+                    <td><a href="{% url 'form_del_producto' pro.cod_producto %}">Eliminar</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
 
-        <li>{{comida}}</li>
-
-        {% endfor %}
-    </ol>
-    <br>
-
-    <h1>{{nombre}} tiene un hijo llamado {{hijo.nombre}} que tiene {{hijo.edad}}años</h1>
-
-    <br>
-
-    <h4>Publique su obra para venderla</h4>
-    <br>
-
-    <div class="container">
-        <div class="row">
-            <form id="subirobraa" action="index.html" method="post">
-                <div class="form-group">
-                    <label for="name">Nombre <span>(Minimo 3 Caracteres)</span></label>
-                    <input id="name" name="name" minlength="3" type="text" required class="form-control">
-                </div>
-                <div class="form-group">
-                    <label for="email">E-Mail </label>
-                    <input id="email" type="email" name="email" required class="form-control">
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputPassword1">Contraseña</label>
-                    <input type="password" required class="form-control" id="password">
-                </div>
-                <div class="form-group">
-                    <label for="exampleFormControlFile1">Subir Obra Adjuntar</label>
-                    <input type="file" class="form-control-file" id="exampleFormControlFile1">
-                </div>
-                <label for="precio">Precio $ </label>
-                <input id="precio" name="precio" min="1" type="number" required class="form-control">
-                <br>
-                <input class="btn btn-danger" type="submit" value="SUBMIT">
-                <input type="reset" class="btn btn-primary" id="limpiar" value="Limpiar">
-
-            </form>
-
-        </div>
+        </table>
+        <a href="{% url 'form_producto' %}">Nuevo Producto</a>
     </div>
 
 
@@ -182,6 +168,7 @@
             </div>
         </div>
     </footer>
+
 
 
 </body>

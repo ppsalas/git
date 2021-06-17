@@ -2,7 +2,6 @@
 <html lang="es">
 
 {% load static %}
-
 <head>
     <!-- META -->
     <meta charset="UTF-8">
@@ -33,7 +32,7 @@
 </head>
 
 <body>
-
+    
     <!--Header con Menu buscador y Demaces -->
     <div>
         <header>
@@ -81,8 +80,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'subirobra' %}" tabindex="-1"
-                                aria-disabled="true"><b>Publicar
+                            <a class="nav-link" href="{% url 'form_producto' %}" tabindex="-1" aria-disabled="true"><b>Publicar
                                     Obra</b></a>
                         </li>
                     </ul>
@@ -96,41 +94,6 @@
 
 
     <hr size="10px" color="black" />
-    <div class="row">
-        <h1>Listado de Productos</h1>
-    </div>
-
-    <div class="row">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col">Codigo</th>
-                    <th scope="col">Nombre</th>
-                    <th scope="col">Precio</th>
-                    <th scope="col">Stock</th>
-                    <th scope="col">Descripcion</th>
-                    <th scope="col">Foto</th>
-                    <th scope="col">Opciones</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for pro in productos %}
-                <tr>
-                    <td>{{pro.cod_producto}}</td>
-                    <td>{{pro.nombre}}</td>
-                    <td>{{pro.precio}}</td>
-                    <td>{{pro.stock}}</td>
-                    <td>{{pro.descripcion}}</td>
-                    <td>{{pro.foto}}</td>
-                    <td><a href="{% url 'form_mod_producto' pro.cod_producto %}">Modificar</a></td>
-                    <td><a href="{% url 'form_del_producto' pro.cod_producto %}">Eliminar</a></td>
-                </tr>
-                {% endfor %}
-            </tbody>
-
-        </table>
-        <a href="{% url 'form_producto' %}">Nuevo Producto</a>
-    </div>
 
 
     <hr size="10px" color="black" />
