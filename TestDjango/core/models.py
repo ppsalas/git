@@ -49,4 +49,5 @@ class Producto_Carro(models.Model):
     
     def __str__(self):
         return self.cantidad
+
     
