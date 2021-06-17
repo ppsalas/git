@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import Producto
 
 # Create your views here.
 
@@ -24,7 +25,14 @@ def iniciarsesion(request):
     return render(request, 'core/iniciarsesion.html')
 
 def pinturadestacada1(request):
-    return render(request, 'core/pinturadestacada1.html')
+    
+    productos=Producto.objects.all()
+    
+    datos = {
+        'productos': productos
+    }
+    
+    return render(request, 'core/pinturadestacada1.html', datos)
 
 def pinturadestacada2(request):
     return render(request, 'core/pinturadestacada2.html')

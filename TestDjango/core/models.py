@@ -35,7 +35,7 @@ class Producto(models.Model):
     foto=models.ImageField(null=True, blank=True, verbose_name='Foto Producto')
     
     def __str__(self):
-        return self.nombre
+        return self.cod_producto
 
 
     

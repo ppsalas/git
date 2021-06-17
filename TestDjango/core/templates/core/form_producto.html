@@ -95,17 +95,6 @@
 
     <hr size="10px" color="black" />
 
-<div class="row">
-    <h1>Listado de Productos</h1>
-</div>
-<div class="row">
-    <table border=1>
-        <tr><td>Cod Producto</td><td>Nombre</td><td>Precio</td><td>Stock</td><td>Descripcion Producto</td><td>FOTO</td></tr>
-        {% for pro in productos %}
-        <tr><td>{{pro.cod_producto}}</td><td>{{pro.nombre}}</td><td>{{pro.precio}}</td><td>{{pro.stock}}</td><td>{{pro.descripcion}}</td><td>{{pro.foto}}</td></tr>
-        {% endfor %}
-    </table>
-</div>
 
     <hr size="10px" color="black" />
     <!--FOOTER -->
