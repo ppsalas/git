@@ -17,8 +17,8 @@ urlpatterns = [
     path('registrarse', registrar,name="registrar"),
     path('subir_obra', subirobra,name="subirobra"),
     path('form-producto', form_producto, name="form_producto"),
-    path('form-mod-producto', form_mod_producto, name="form_mod_producto"),
-    path('form-del-producto', form_del_producto, name="form_del_producto"),
+    path('form-mod-producto/<id>', form_mod_producto, name="form_mod_producto"),
+    path('form-del-producto/<id>', form_del_producto, name="form_del_producto"),
 ]
 
 

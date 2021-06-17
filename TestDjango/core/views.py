@@ -96,6 +96,15 @@ def form_mod_producto(request, id):
     return render(request, 'core/form_mod_producto.html', datos)
 
 
+def form_del_producto(request,id):
+    #el id es el identificador de la tabla productos
+    #buscando los datos en la base de datos
+    producto=Producto.objects.get(cod_producto=id)
+    #eliminamos el producto del id buscado
+    producto.delete()
+    #ahora redirigmos a la pagina con el listado
+    return redirect(to="pinturadestacada1")
+
 class Persona:
     def __init__(self, nombre, edad):
         self.nombre = nombre
@@ -114,11 +123,3 @@ def subirobra(request):
     return render(request, 'core/subirobra.html', contexto)
 
 
-def form_del_producto(request,id):
-    #el id es el identificador de la tabla productos
-    #buscando los datos en la base de datos
-    producto=Producto.objects.get(cod_producto=id)
-    #eliminamos el producto del id buscado
-    producto.delete()
-    #ahora redirigmos a la pagina con el listado
-    return redirect(to="pinturadestacada1")

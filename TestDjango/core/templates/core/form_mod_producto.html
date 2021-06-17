@@ -30,6 +30,12 @@
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
 
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#error").hide();
+            $("#succes").hide();
+        })
+    </script>
 </head>
 
 <body>
@@ -106,16 +112,16 @@
             <form method="post" action="" id="formulario">
                 {% csrf_token %}
                 <div class="form-group">
-                {{form.as_table}}
+                    {{form.as_table}}
                 </div>
-                
+
                 <input type="submit" class="btn btn-danger" id="enviar" value="Modificar">
                 <input type="reset" class="btn btn-primary" id="limpiar" value="Limpiar">
                 <div id="error" class="alert alert-danger" role="alert"></div>
             </form>
         </div>
         <div class="row">
-            <div class="alert alert-success" role="alert">
+            <div class="alert alert-success" role="alert" id="succes">
                 {{mensaje}}
             </div>
         </div>

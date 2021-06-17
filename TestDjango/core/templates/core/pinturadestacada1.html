@@ -114,7 +114,7 @@
                 </tr>
             </thead>
             <tbody>
-                {% for pro in productos}
+                {% for pro in productos %}
                 <tr>
                     <td>{{pro.cod_producto}}</td>
                     <td>{{pro.nombre}}</td>
@@ -127,9 +127,11 @@
                 </tr>
                 {% endfor %}
             </tbody>
+
         </table>
         <a href="{% url 'form_producto' %}">Nuevo Producto</a>
     </div>
+
 
     <hr size="10px" color="black" />
     <!--FOOTER -->
