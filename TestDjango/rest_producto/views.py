@@ -7,6 +7,7 @@ from django.views.decorators.csrf import csrf_exempt
 from core.models import Producto
 from .serializers import ProductoSerializer
 @csrf_exempt
+
 @api_view(['GET','POST'])
 def lista_productos(request):
     
@@ -18,12 +19,43 @@ def lista_productos(request):
         serializer=ProductoSerializer(producto, many=True)
         return Response(serializer.data)
     elif (request.method=='POST'):
-        data = JSONParser().parse(request)
+        data=JSONParser().parse(request)
         serializer = ProductoSerializer(data=data)
         if (serializer.is_valid()):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
+        else:
+            return Response(serializer.data, status=status.HTTP_400_BAD_REQUEST)
+        
+@api_view (['GET','PUT','DELETE'])     
+def detalle_producto(request, id):
+    
+    """
+    GET, UPDATE O DELETE DE UN PRODUCTO EN PARTICULAR
+    """   
+    try:
+        producto = Producto.objects.get(cod_producto=id)
+    except Producto.DoesNotExist:
+        return Response(status=status.HTTP_404_NOT_FOUND)
+    if request.method == 'GET':
+        serializer = ProductoSerializer(producto)
+        return Response(serializer.data)
+    if request.method == 'PUT':
+        data = JSONParser().parse(request)
+        serializer = ProductoSerializer(producto, data=data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        else:
+            return Response (serializer.errors, status=status.HTTP_400_BAD_REQUEST)     
+    elif request.method == 'DELETE':
+        producto.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
 
+         
+   
+    
+       
 
 
 

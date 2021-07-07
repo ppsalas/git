@@ -110,10 +110,6 @@ def form_del_producto(request,id):
     return redirect(to="listado")
 
 
-def lista_productos(request):
-    return render(request, 'core/lista_productos.html')
-def detalle_producto(request):
-    return render(request, 'core/detalle_producto.html')
 
 
 
