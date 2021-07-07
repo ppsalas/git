@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import index, coleccioncompleta, Contacto, cuadrosgrabados, equipo, formatopequeño, iniciarsesion, pinturadestacada1, pinturadestacada2, pinturadestacada3, registrar, listado, form_producto, form_mod_producto, form_del_producto 
+from .views import index, coleccioncompleta, Contacto, cuadrosgrabados, equipo, formatopequeño, iniciarsesion, pinturadestacada1, pinturadestacada2, pinturadestacada3, registrar, listado, form_producto, form_mod_producto, form_del_producto, lista_productos, detalle_producto
 
 
 
@@ -19,6 +19,8 @@ urlpatterns = [
     path('form-producto', form_producto, name="form_producto"),
     path('form-mod-producto/<id>', form_mod_producto, name="form_mod_producto"),
     path('form-del-producto/<id>', form_del_producto, name="form_del_producto"),
+    path('lista_productos', lista_productos, name="lista_productos"),
+    path('detalle_producto/<id>', detalle_producto, name="detalle_producto"),  
 ]
 
 
