@@ -109,8 +109,9 @@
         <div class="row">
             <form method="post" action="" id="formulario">
                 {% csrf_token %}
-                <div class="form-group">
+                <div class="row">
                     {{form.as_table}}
+                    <br>
                 </div>
                 <br>
                 <input type="submit" class="btn btn-danger" id="enviar" value="Modificar">

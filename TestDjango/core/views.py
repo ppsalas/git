@@ -6,8 +6,6 @@ from .forms import ProductoForm
 # Create your views here.
 
 
-def coleccioncompleta(request):
-    return render(request, 'core/coleccioncompleta.html')
 
 
 def Contacto(request):
@@ -127,3 +125,11 @@ def validaProducto(cod_producto):
     existe=Producto.objects.filter(cod_producto=cod_producto).exists()
     return existe
 
+def coleccioncompleta(request):
+    productos = Producto.objects.all()
+    # ahora crearemos una variable que le pase los datos del producto al template
+    datos = {
+        'productos': productos
+    }
+    # ahora lo agregamos para que se envie al templateee
+    return render(request, 'core/coleccioncompleta.html', datos)
