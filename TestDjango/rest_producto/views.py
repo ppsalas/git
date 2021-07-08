@@ -12,7 +12,7 @@ from rest_framework.permissions import IsAuthenticated
 
 @csrf_exempt
 @api_view(['GET','POST'])
-#@permission_classes((IsAuthenticated,))
+@permission_classes((IsAuthenticated,))
 def lista_productos(request):
     
     '''
@@ -32,7 +32,7 @@ def lista_productos(request):
             return Response(serializer.data, status=status.HTTP_400_BAD_REQUEST)
         
 @api_view (['GET','PUT','DELETE'])
-#@permission_classes((IsAuthenticated,))    
+@permission_classes((IsAuthenticated,))    
 def detalle_producto(request, id):
     
     """

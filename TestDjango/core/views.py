@@ -115,7 +115,13 @@ def form_del_producto(request,id):
 
 
 def consume_api(request):
-    return render(request,'core/consume_api.html')
+    productos = Producto.objects.all()
+    # ahora crearemos una variable que le pase los datos del producto al template
+    datos = {
+        'productos': productos
+    }
+    # ahora lo agregamos para que se envie al templateee
+    return render(request, 'core/consume_api.html', datos)
 
 def validaProducto(cod_producto):
     existe=Producto.objects.filter(cod_producto=cod_producto).exists()
