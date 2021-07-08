@@ -19,11 +19,10 @@ def lista_productos(request):
     LISTA TODOS LOS PRODUCTO
     '''
     if (request.method=='GET'):
-        productos=Producto.objects.all()
-        serializer=ProductoSerializer(productos, many=True)
+        producto=Producto.objects.all()
+        serializer=ProductoSerializer(producto, many=True)
         return Response(serializer.data)
     elif (request.method=='POST'):
-        print(request)
         data=JSONParser().parse(request)
         serializer = ProductoSerializer(data=data)
         if (serializer.is_valid()):
@@ -40,22 +39,22 @@ def detalle_producto(request, id):
     GET, UPDATE O DELETE DE UN PRODUCTO EN PARTICULAR
     """   
     try:
-        productos = Producto.objects.get(cod_producto=id)
+        producto = Producto.objects.get(cod_producto=id)
     except Producto.DoesNotExist:
         return Response(status=status.HTTP_404_NOT_FOUND)
     if request.method == 'GET':
-        serializer = ProductoSerializer(productos)
+        serializer = ProductoSerializer(producto)
         return Response(serializer.data)
     if request.method == 'PUT':
         data = JSONParser().parse(request)
-        serializer = ProductoSerializer(productos, data=data)
+        serializer = ProductoSerializer(producto, data=data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)
         else:
             return Response (serializer.errors, status=status.HTTP_400_BAD_REQUEST)     
     elif request.method == 'DELETE':
-        productos.delete()
+        producto.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
 
          
