@@ -68,12 +68,16 @@ def form_producto(request):
     if request.method == 'POST':
         # con request recuperamos los datos del formulario
         formulario = ProductoForm(request.POST)
+        cod_producto=request.POST.get("cod_producto")
         # validamos el formulario
         if formulario.is_valid:
-            # guardamos en la base de datos
-            formulario.save()
-            # y mostramos un mensaje
-            datos['mensaje'] = "Guardado correctamente"
+            if not validaProducto(cod_producto):
+                # guardamos en la base de datos
+                formulario.save()
+                # y mostramos un mensaje
+                datos['mensaje'] = "Guardado correctamente"
+            else:
+                datos['mensaje']="Ya existe un registro asociado a ese codigo"    + cod_producto  
     return render(request, 'core/form_producto.html', datos)
 
 
@@ -82,14 +86,14 @@ def form_mod_producto(request, id):
     # el id es el identificador de la tabla productos
     # buscando los datos en la base de datos
     # buscamos por codigo que llega como dato en la url
-    producto = Producto.objects.get(cod_producto=id)
+    productos = Producto.objects.get(cod_producto=id)
     # ahora le entregamos los datos del producto al formulario
-    datos = {'form': ProductoForm(instance=producto)}
+    datos = {'form': ProductoForm(instance=productos)}
 
     # verificamos que la peticion sean post y rescatamos los datos
     if request.method == 'POST':
         # con request recuperamos los datos del formulario y le agregamos el id modificar
-        formulario = ProductoForm(data=request.POST, instance=producto)
+        formulario = ProductoForm(data=request.POST, instance=productos)
         # validamos el formulario
         if formulario.is_valid:
             # ahora guardamosen la base datos
@@ -103,13 +107,17 @@ def form_mod_producto(request, id):
 def form_del_producto(request,id):
     #el id es el identificador de la tabla productos
     #buscando los datos en la base de datos
-    producto=Producto.objects.get(cod_producto=id)
+    productos=Producto.objects.get(cod_producto=id)
     #eliminamos el producto del id buscado
-    producto.delete()
+    productos.delete()
     #ahora redirigmos a la pagina con el listado
     return redirect(to="listado")
 
 
+def consume_api(request):
+    return render(request,'core/consume_api.html')
 
-
+def validaProducto(cod_producto):
+    existe=Producto.objects.filter(cod_producto=cod_producto).exists()
+    return existe
 

@@ -1,6 +1,5 @@
 from django.urls import path
 from rest_producto.views import lista_productos, detalle_producto
-from rest_producto import views
 from rest_producto.viewslogin import login
 
 

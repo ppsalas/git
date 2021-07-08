@@ -1,7 +1,6 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="es">
-
-{% load static %}
 <head>
     <!-- META -->
     <meta charset="UTF-8">
@@ -128,6 +127,7 @@
     <br>
     <div class="card-deck" id=cajas>
         <div class="card">
+           
             <img src="{% static 'core/img/formatopequeño.png'%}" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">Obras Formato Pequeño</h5>
@@ -150,6 +150,9 @@
         </div>
     </div>
     <br>
+    <div class="container">
+        <a href="{% url 'consume_api' %}">PROBAR API</a>
+    </div>
     <br>
 
     <hr size="10px" color="black" />

@@ -3,8 +3,8 @@ from core.models import Producto
 
 class ProductoSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Producto
-        fields = ["cod_producto", "nombre", "precio", "stock", "descripcion", "foto"]
+        model=Producto
+        fields=['cod_producto', 'nombre', 'precio', 'stock', 'descripcion', 'foto']
         
         
         

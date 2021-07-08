@@ -1,60 +1,17 @@
 $(document).ready(function () {
-    $("#registrarsee").validate({
-        rules: {
-            name: {
-                required: true,
-                minlength: 3
-            },
-            password: {
-                required: true,
-                minlength: 1
-            },
-            email: {
-                required: true,
-                email: true
-            },
-        }
+    //alert('paso1')
+    $.getJSON('127.0.0.1:8000/api/lista-productos', function (data) {
+        console.log(data)
+        var productos = data;
+        $('#cod_producto').html(productos.cod_producto);
+        $('#nombre').html(productos.nombre);
+        $('#precio').html(productos.precio);
+        $('#stock').html(productos.stock);
+        $('#descripcion').html(productos.descripcion);
+        $('#foto').attr("src", productos.foto);
+    }).fail(function () {
+        console.log('Error al consumir la API!');
     });
 });
 
-
-$(document).ready(function () {
-    $("#iniciarsesion").validate({
-        rules: {
-            name: {
-                required: true,
-                minlength: 3
-            },
-            password: {
-                required: true,
-                minlength: 1
-            },
-            email: {
-                required: true,
-                email: true
-            },
-        }
-    });
-});
-
-
-$(document).ready(function() {
-    $("#subirobraa").validate({
-      rules: {
-        name : {
-          required: true,
-          minlength: 3
-        },
-        precio: {
-          required: true,
-          number: true,
-          min: 1
-        },
-        email: {
-          required: true,
-          email: true
-        },
-      }
-    });
-  });
 
