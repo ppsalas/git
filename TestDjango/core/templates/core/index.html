@@ -35,16 +35,17 @@
     <!--Header con Menu buscador y Demaces -->
     <div>
         <header>
-            <title>Group 0 | Pagina De Ventas de articulos de Pintura Online</title>
+            <title>Centro Medico Galeno | Pagina de Centro Medico Galeno</title>
             <hr size="10px" color="black" />
             <div class=container>
                 <form class="form-inline my-5 my-lg-2">
-                    <a class="navbar-brand" id=logo href="{% url 'index' %}"><img src="{% static 'core/img/logo.png'%}"
+                    <a class="navbar-brand" id=logo href="{% url 'index' %}"><img src="{% static 'core/img/logomedico.png'%}"
                             height="55vw" width="55vw"></a>
-                    <h3>Group 0 </h3>
+                    <h3>Centro Medico Galeno </h3>
+                    <hr>
                     <div>
                         <input class="form-control mr-sm-2" id=buscarpag type="search" size="45"
-                            placeholder="Buscar por Autor, Tipo, Nombre" aria-label="Search">
+                            placeholder="Buscar Medico" aria-label="Search">
                         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
                     </div>
                     <div class="nav-item dropdown">
@@ -92,18 +93,15 @@
         <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active" data-interval="10000">
-                    <a href="{% url 'pinturadestacada1' %}">
-                        <img src="{% static 'core/img/pinturadestacada1.png'%}" class="d-block w-100" alt="Inti Castro"
+                        <img src="{% static 'core/img/centromedico.jpg'%}" class="d-block w-100" alt="Inti Castro"
                             width="450px" height="500px"></a>
                 </div>
                 <div class="carousel-item" data-interval="2000">
-                    <a href="{% url 'pinturadestacada2' %}">
-                        <img src="{% static 'core/img/pinturadestacada2.png'%}" class="d-block w-100" alt="..."
+                        <img src="{% static 'core/img/centromedico2.jpg'%}" class="d-block w-100" alt="..."
                             width="450px" height="500px"></a>
                 </div>
                 <div class="carousel-item">
-                    <a href="{% url 'pinturadestacada3' %}">
-                        <img src="{% static 'core/img/pinturadestacada3.png'%}" class="d-block w-100" alt="..."
+                        <img src="{% static 'core/img/centromedico3.jpg'%}" class="d-block w-100" alt="..."
                             width="450px" height="500px"></a>
                 </div>
             </div>
@@ -120,31 +118,32 @@
     </div>
 
     <hr size="10px" color="black" />
-    <h1>Tipos de obras </h1>
+    <h1>Servicios Centro Medico </h1>
 
 
     <hr size="10px" color="black" />
     <br>
     <div class="card-deck" id=cajas>
+        <hr>
         <div class="card">
            
-            <img src="{% static 'core/img/formatopequeño.png'%}" class="card-img-top" alt="...">
+            <img src="{% static 'core/img/reservarhoram.PNG'%}" class="card-img-top" alt="...">
             <div class="card-body">
-                <h5 class="card-title">Obras Formato Pequeño</h5>
+                <h5 class="card-title">Reserva de Hora</h5>
                 <a href="{% url 'formatopequeño' %}" class="btn btn-primary">Ver</a>
             </div>
         </div>
         <div class="card">
-            <img src="{% static 'core/img/cuadrosgrabados.png'%}" class="card-img-top" alt="...">
+            <img src="{% static 'core/img/anularhoram.PNG'%}" class="card-img-top" alt="...">
             <div class="card-body">
-                <h5 class="card-title">Pinturas y Cuadros Grabados</h5>
+                <h5 class="card-title">Anular/Consultar Hora</h5>
                 <a href="{% url 'cuadrosgrabados' %}" class="btn btn-primary">Ver</a>
             </div>
         </div>
         <div class="card">
-            <img src="{% static 'core/img/coleccioncompleta.png'%}" class="card-img-top" alt="...">
+            <img src="{% static 'core/img/anularhoram.PNG'%}" class="card-img-top" alt="...">
             <div class="card-body">
-                <h5 class="card-title">Coleccion Completa</h5>
+                <h5 class="card-title">Anular/Consultar Hora</h5>
                 <a href="{% url 'listado' %}" class="btn btn-primary">Ver</a>
             </div>
         </div>
