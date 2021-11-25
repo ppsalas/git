@@ -5,7 +5,7 @@ from django.db import models
 
 #MODELO USUARIO
 class Usuario(models.Model):
-    run=models.CharField(max_length=10, primary_key=True, verbose_name='Rut')
+    run=models.CharField(max_length=10, primary_key=True, verbose_name='Rut Cliente')
     nombre=models.CharField(max_length=20, verbose_name='Nombre')
     email=models.CharField(max_length=50, verbose_name='Email')
     contraseña=models.CharField(max_length=50, verbose_name='Contraseña')
@@ -25,13 +25,13 @@ class Agenda(models.Model):
     
 #MODELO CITAS_PACIENTE
 class Citas(models.Model):
-    run=models.CharField(max_length=10, verbose_name='Rut Cliente')  
-    hora=models.CharField(max_length=50, verbose_name='Hora') 
+    idcita=models.IntegerField(primary_key=True, verbose_name='Id Cita')
+    hora=models.CharField(max_length=50, verbose_name='Hora')
+    run=models.ForeignKey(Usuario, on_delete=models.CASCADE)
     estado=models.CharField(max_length=50, verbose_name='Estado')
-    idcita=models.IntegerField(primary_key=True, verbose_name='Id Cita') 
     
     def __str__(self):
-        return self.idagenda 
+        return self.run 
     
 #MODELO PAGO
 class Pago(models.Model):
