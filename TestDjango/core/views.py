@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import Producto
+from .models import Agenda
 from .forms import ProductoForm
 
 
@@ -48,7 +49,15 @@ def registrar(request):
     return render(request, 'core/registrar.html')
 
 def reservarhora(request):
-    return render(request, 'core/reservarhora.html')
+    # accediendo al objeto que contiene los datos de la base de datos
+    # el metodo all traera todas las horas que estan en la tabla
+    agenda = Agenda.objects.all()
+    # ahora crearemos una variable que le pase los datos del producto al template
+    datos = {
+        'agenda': agenda
+    }
+    # ahora lo agregamos para que se envie al templateee
+    return render(request, 'core/reservarhora.html', datos)
 
 def listado(request):
     # accediendo al objeto que contiene los datos de la base de datos

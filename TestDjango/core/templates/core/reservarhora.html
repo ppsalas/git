@@ -91,8 +91,9 @@
 
         </header>
     </div>
-
-    <div>
+    <h1>RESERVA DE HORA</h1>
+    <br>
+    <div class = "container">
         <table class="table">
             <thead>
                 <tr>
@@ -108,10 +109,9 @@
                 {% for ag in agenda %}
                 <tr>
                     <td>{{ag.idagenda}}</td>
-                    <td>{{ag.run_id}}</td>
+                    <td>{{ag.run}}</td>
                     <td>{{ag.hora}}</td>
                     <td>{{ag.medicoespecialidad}}</td>
-                    <td><a href="{% url 'form_mod_producto' pro.cod_producto %}">Tomar Hora</a></td>
                 </tr>
                 {% endfor %}
             </tbody>
