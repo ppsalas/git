@@ -113,7 +113,7 @@
                     <td>{{ag.run}}</td>
                     <td>{{ag.hora}}</td>
                     <td>{{ag.medicoespecialidad}}</td>
-                    <td><a href="{% url 'confirmarhora' %}">Tomar Hora</a></td>
+                    <td><a href="{% url 'confirmarhora' ag.idagenda %}">Tomar Hora</a></td>
                 </tr>
                 {% endfor %}
             </tbody>

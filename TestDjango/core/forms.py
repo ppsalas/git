@@ -18,5 +18,5 @@ class ProductoForm(ModelForm):
 class CitasForm(ModelForm):
     class Meta:
         model = Citas
-        fields =["idcita", "run", "hora", "estado"]
+        fields =["idagenda", "run", "hora", "estado"]
                 

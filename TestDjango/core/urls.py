@@ -21,7 +21,7 @@ urlpatterns = [
     path('form-del-producto/<id>', form_del_producto, name="form_del_producto"),
     path('consume-api', consume_api,name="consume_api"),
     path('reservarhora', reservarhora,name="reservarhora"),
-    path('confirmarhora', confirmarhora,name="confirmarhora"),
+    path('confirmarhora/<id>', confirmarhora,name="confirmarhora"),
 ]
 
 

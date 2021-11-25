@@ -18,17 +18,17 @@ class Agenda(models.Model):
     idagenda=models.IntegerField(primary_key=True, verbose_name='Id Agenda')
     hora=models.CharField(max_length=50, verbose_name='Hora')
     medicoespecialidad=models.CharField(null=True, max_length=50, verbose_name='Medico y especialidad')
-    run=models.ForeignKey(Usuario, on_delete=models.CASCADE)
+    run=models.CharField(max_length=10, verbose_name='Rut')
     
     def __str__(self):
         return self.run 
     
 #MODELO CITAS_PACIENTE
 class Citas(models.Model):
-    run=models.CharField(max_length=10, verbose_name='Rut Cliente')  
+    idagenda=models.IntegerField(primary_key=True, verbose_name='Id Agenda')
+    run=models.CharField(max_length=10, verbose_name='Rut Medico')  
     hora=models.CharField(max_length=50, verbose_name='Hora') 
-    estado=models.CharField(max_length=50, verbose_name='Estado')
-    idcita=models.IntegerField(primary_key=True, verbose_name='Id Cita') 
+    estado=models.CharField(max_length=50, verbose_name='NOTAS') 
     
     def __str__(self):
         return self.idagenda 

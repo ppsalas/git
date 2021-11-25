@@ -53,8 +53,6 @@ def pinturadestacada3(request):
 def registrar(request):
     return render(request, 'core/registrar.html')
 
-def confirmarhora(request):
-    return render(request, 'core/confirmarhora.html')
 
 def reservarhora(request):
     # accediendo al objeto que contiene los datos de la base de datos
@@ -67,7 +65,7 @@ def reservarhora(request):
     # ahora lo agregamos para que se envie al templateee
     return render(request, 'core/reservarhora.html', datos)
 
-def confirmarhora(request):
+def confirmarhoraa(request):
     # el view sera el responsable de entregar el form al template
     datos = {'form': CitasForm}
     # verificamos que peticion sean post y rescatamos los datos
@@ -84,33 +82,33 @@ def confirmarhora(request):
                 datos['mensaje'] = "Hora Reservada correctamente"
             else:
                 datos['mensaje']="Ya existe un registro asociado a ese codigo"    + cod_producto  
-    return render(request, 'core/confirmarhora.html', datos)
+    return render(request, 'core/confirmarhoraa.html', datos)
 
 def validaAgenda(idagenda):
     existe=Agenda.objects.filter(idagenda=idagenda).exists()
     return existe
 
-def form_mod_producto(request, id):
+def confirmarhora(request, id):
 
     # el id es el identificador de la tabla productos
     # buscando los datos en la base de datos
     # buscamos por codigo que llega como dato en la url
-    productos = Producto.objects.get(cod_producto=id)
+    agenda = Agenda.objects.get(idagenda=id)
     # ahora le entregamos los datos del producto al formulario
-    datos = {'form': ProductoForm(instance=productos)}
+    datos = {'form': CitasForm(instance=agenda)}
 
     # verificamos que la peticion sean post y rescatamos los datos
     if request.method == 'POST':
         # con request recuperamos los datos del formulario y le agregamos el id modificar
-        formulario = ProductoForm(data=request.POST, instance=productos)
+        formulario = CitasForm(data=request.POST, instance=agenda)
         # validamos el formulario
         if formulario.is_valid:
             # ahora guardamosen la base datos
             formulario.save()
             # enviamos mensaje
-            datos['mensaje'] = "Modificado Correctamente"
+            datos['mensaje'] = "Hora Tomada Correctamente "
 
-    return render(request, 'core/form_mod_producto.html', datos)
+    return render(request, 'core/confirmarhora.html', datos)
 
 def form_del_agenda(request,id):
     #el id es el identificador de la tabla productos
