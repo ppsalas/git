@@ -47,6 +47,9 @@ def pinturadestacada3(request):
 def registrar(request):
     return render(request, 'core/registrar.html')
 
+def reservarhora(request):
+    return render(request, 'core/reservarhora.html')
+
 def listado(request):
     # accediendo al objeto que contiene los datos de la base de datos
     # el metodo all traera todos los productos que estan en la tabla

@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import consume_api, index, coleccioncompleta, Contacto, cuadrosgrabados, equipo, formatopequeño, iniciarsesion, pinturadestacada1, pinturadestacada2, pinturadestacada3, registrar, listado, form_producto, form_mod_producto, form_del_producto
+from .views import consume_api, index, coleccioncompleta, Contacto, cuadrosgrabados, equipo, formatopequeño, iniciarsesion, pinturadestacada1, pinturadestacada2, pinturadestacada3, registrar, listado, form_producto, form_mod_producto, form_del_producto, reservarhora
 
 
 
@@ -20,6 +20,7 @@ urlpatterns = [
     path('form-mod-producto/<id>', form_mod_producto, name="form_mod_producto"),
     path('form-del-producto/<id>', form_del_producto, name="form_del_producto"),
     path('consume-api', consume_api,name="consume_api"),
+    path('reservarhora', reservarhora,name="reservarhora"),
 ]
 
 
