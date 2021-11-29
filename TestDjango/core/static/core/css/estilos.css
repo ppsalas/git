@@ -15,9 +15,9 @@ body{
     color:white;        
 }
 #cajas{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 60%;
+    height: 60%;
+    margin-left: 240px;
 
 }
 
